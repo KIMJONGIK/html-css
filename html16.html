@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>form 태그 요소</title>
+</head>
+<body>
+    <div>
+        form 태그를 사용하여 사용자가 직접 데이터를 입력 해서 서버에 요청 할 수 있다.<br/>
+        예를들어 id와 pw를 입력하여 서버에 로그인을 요청하는 경우        
+    </div>
+    
+    <!-- action : 전송(요청) 할 uri-->
+    <!-- method : 방식 get, post -->
+    <form action="#" method="get">
+        <ul>
+            <li>이름 : <input type="text" id="username"></li>
+            <li>비번 : <input type="password" id="userpw"></li>
+            <li>메일 : <input type="email" id="email"></li>
+            <li><input type="submit" value="가입하기"></li>
+            <li><input type="reset" value="다시 입력"></li>
+        </ul>  
+    </form>
+    
+</body>
+</html>

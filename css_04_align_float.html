@@ -1,0 +1,271 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+
+    <style>
+        
+        #center-align-parent-div {
+            /*일반적인 가운데 정렬을 사용 할 때 사용한다.*/
+            text-align: center;
+            background-color: yellow;
+        }
+
+        /*****************************헬퍼 및 inline-block를 사용한 텍스트 가운데 정렬*****************************/
+
+        /* helper를 사용한.. 부모 div */
+
+        #helper-vertical-align-parent-div {
+            background-color: greenyellow;
+            height: 100px;
+        }
+
+        /* 실제 컨텐츠를 표현할 #vertical-align-child-div를 위한 helper div.
+           width 속성을 삭제하면 아무것도 나오지 않는다.*/
+
+        #helper {
+            display: inline-block;
+            height: 100%;
+            background-color: forestgreen;
+            vertical-align: middle;
+        }
+
+        /* 실제 vertical-align은 바로 옆의 태그의 영향을 받는다. helper태그의 크기가 100%이고, vertical-align이 middle로 정의되어 있기 때문에
+           helper div의 영향으로 #vertical-align-child-div가 실제 가운데에 배치 되게 된다.*/
+
+        /* 단점 : inline-block으로 인해 margin을 0으로 줬음에도 불구하고 공백이 생기게 된다. */
+
+        #helper-vertical-align-child-div1 {
+            vertical-align: middle;
+            display: inline-block;
+            background: red;
+            margin: 0;
+            padding: 0;
+        }
+
+        #helper-vertical-align-child-div2 {
+            vertical-align: top;
+            display: inline-block;
+            background: blue;
+            margin: 0;
+            padding: 0;
+        }
+
+        #helper-vertical-align-child-div3 {
+            vertical-align: bottom;
+            display: inline-block;
+            background: green;
+            margin: 0;
+            padding: 0;
+        }
+
+        /***************************** display:table을 사용한 텍스트 가운데 정렬*****************************/
+
+        /* 서로간의 공간은 사라졌지만 table cell의 width, height의 조절이 힘들어 진다. */
+        #table-vertical-align-parent-div {
+            background-color: greenyellow;
+            height: 100px;
+            display: table;
+        }
+        #table-vertical-align-child-div1 {
+            vertical-align: middle;
+            display: table-cell;
+            background: red;
+        }
+        #table-vertical-align-child-div2 {
+            vertical-align: top;
+            display: table-cell;
+            background: green;
+        }
+        #table-vertical-align-child-div3 {
+            vertical-align: bottom;
+            display: table-cell;
+            background: blue;
+        }
+
+        /***************************** Transform css 사용하기 ****************************/
+
+        #transform-vertical-align-parent-div {
+            background-color: greenyellow;
+            height: 100px;
+        }
+
+        /*  
+            relative, top:50%를 이용해서 위로부터 50% 띄우기
+            transform:translateY를 사용하지 않으면 child 태그의 반 만큼 약간 밑으로 내려간다.
+            따라서 transform:translateY(-50%)를 사용해 child 태그의 반 만큼 약간 아래에서 위로 올려준다.*/
+        /*
+            하지만 여전히 display가 inline-block 이기 때문에 공간이 존재한다. inline-block을 삭제 하고 
+            float:left 속성을 부여하면 정확히 처리가 된다.
+        */
+        .transform-vertical-align-child-div {
+            vertical-align: middle;
+            display: inline-block;
+            /* float:left; */
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            background: skyblue;
+        }
+        /***************************** float 테스트 해 보기 ****************************/
+        
+        /* 공통 : float 속성을 주게 되면 더 이상 요소의 width가 100%가 아니게 된다. */
+        
+        /* float:left 속성 : 해당하는 엘리먼트를 다음에 배치 될 엘리먼트들의 왼쪽에 위치 시켜주는 역할을 하게 된다.*/
+        #float-test1 .float-left{
+            float:left;
+            background-color: yellow;
+        }
+        #float-test1 .float-default{
+            background-color: skyblue;
+        }
+        /* float:right 속성 : 해당하는 엘리먼트를 이전에 배치 된 엘리먼트의 오른쪽에 위치시켜 주는 역할을 하게 된다.*/
+        #float-test1 .float-right{
+            float:right;
+            background-color: forestgreen;
+        }
+        #float-test1 .clear-float{
+            clear: left; /* both : 양쪽 전부다 float 삭제, right : 오른쪽 삭제 */
+            background-color: skyblue;
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        /*overflow:auto 또는 overflow:hidden을 활용한 부모태그의 자식태그 인식하기*/
+        .float-child{
+            float:left;
+        }
+        .float-parent{
+            background-color: lightgoldenrodyellow;
+        }
+        .float-parent-overflow{
+            overflow: hidden;
+            background-color: lightgoldenrodyellow;
+            clear: both;
+        }
+        
+        
+        
+        
+        
+    </style>
+
+</head>
+
+<body>
+   
+   
+    <div id="text-center-align-test">
+        <div id="center-align-parent-div">
+            <div id="center-align-child-div">
+                This is child div - text center align
+            </div>
+            This is parent div - text center align
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <div id="helper-vertical-align-test">
+        <div id="helper-vertical-align-parent-div">
+            <div id="helper"></div>
+            <div id="helper-vertical-align-child-div1">
+                헬퍼를 사용한 vertical-align : middle
+            </div>
+            <div id="helper-vertical-align-child-div2">
+                헬퍼를 사용한 vertical-align : top
+            </div>
+            <div id="helper-vertical-align-child-div3">
+                헬퍼를 사용한 vertical-align : bottom
+            </div>
+        </div>
+    </div>
+
+   
+   
+    <div id="table-cell-vertical-align-test">
+        <div id="table-vertical-align-parent-div">
+            <div id="table-vertical-align-child-div1">
+                테이블 효과를 사용한 vertical-align : middle
+            </div>
+            <div id="table-vertical-align-child-div2">
+                테이블 효과를 사용한 vertical-align : top
+            </div>
+            <div id="table-vertical-align-child-div3">
+                테이블 효과를 사용한 vertical-align : bottom
+            </div>
+        </div>
+    </div>
+
+   
+   
+   
+    <div id="transform-vertical-align-test">
+        <div id="transform-vertical-align-parent-div">
+            <div class="transform-vertical-align-child-div">
+                Transform css를 활용한 vertical-align : middle
+            </div>
+            <div class="transform-vertical-align-child-div">
+                Transform css를 활용한 vertical-align : middle
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    <!-- float left, float right 및 clear 테스트 -->
+    <div id="float-test1">
+        <div class="float-left"> float left </div>
+        <div class="float-default">float default</div>
+        <div class="float-right">float right</div>
+        
+        <div class="float-left"> float left DIV</div>
+        <div class="clear-float"> clear float - float 효과가 사라진다.</div>
+    </div>
+    
+    <!-- float의 문제점. 부모태그가 float이 적용된 자식태그의 높이를 0으로 인지하는 현상 발생 -->
+    <!-- overflow를 활용하여 해결 가능! -->
+    <div id="float-test2">
+        <div class="float-parent">
+            <div class="float-child">float child1</div>
+        </div>
+        <div class="float-parent-overflow">
+            <div class="float-child">float child2</div>
+        </div>
+    </div>
+
+
+
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+
+
+
+
+
+
+</body>
+</html>

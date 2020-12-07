@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #default-div {
+            background-color: skyblue;
+            width: 100px;
+            height: 100px;
+            overflow-y: scroll;
+        }
+
+        #default-span {
+            background-color: pink;
+            width: 300px;
+            height: 300px;
+        }
+
+        #box1 {
+            background-color: silver;
+            width: 100px;
+            height: 100px;
+        }
+
+        #box2 {
+            background-color: mistyrose;
+            width: 100px;
+            height: 100px;
+        }
+
+        #box3 {
+            background-color: salmon;
+            width: 100px;
+            height: 100px;
+        }
+
+        #flex-container {
+            height: 500px;
+            background-color:beige;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            flex-direction: column-reverse;
+            
+            
+        }
+
+    </style>
+
+</head>
+<body>
+    <div id="default-div">
+        div는 기본적으로 block 특성입니다. 한줄을 통째로 차지한다.<br/>
+        block요소와 inline 요소를 모두 포함할 수 있다.<br/>
+        대표적으로 h1~h6, p, ul, ol가 있다.
+    </div>
+
+    <span id="default-span">
+        span은 기본적으로 inline 특성입니다. 가지고 있는 콘텐츠 만큼만 길이를 차지합니다.<br/>
+        inline 요소는 반드시 블록 요소에 들어있어야 합니다. inline 요소는 block 요소를 담을 수 없습니다.<br/>
+        대표적으로 img, input, a 태그가 있다.
+    </span>
+
+    <div id="flex-container">
+        <div id="box1">1</div>
+        <div id="box2">2</div>
+        <div id="box3">3</div>
+    </div>
+</body>
+</html>

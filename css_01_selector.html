@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 선택자</title>
+
+    <style>
+        /* #은 id를 선택한다. */
+        /* .은 class를 선택한다. */
+
+        /* 태그의 이름만 활용한 것을 태그 선택자 라고 한다.*/
+        span {
+            color: coral;
+        }
+        
+        /* 온점(.)을 사용하면 클래스 선택자 */
+        .my-class {
+            font-style: italic;
+        }
+        
+        /* 자식 선택자 ( > )*/
+        #container > h1{
+            color: aqua;
+        }
+
+        /* 후손 선택자(  )*/
+        #container h1 {
+            font-style: italic;
+        }
+
+        /* 속성 선택자  ( [속성명] )*/
+        [title] {
+            background-color: black;
+        }
+
+        /* 속성 매칭 선택자 ( [속성명 = '속성값'] )*/
+        [title="title1"] {
+            font-weight: 800;
+        }
+
+        /* 형제 선택자 ( ~ ) : 뒤에 있는 선택된 요소 선택하기*/
+        #my-span1 ~ input{
+            background-color: red;
+        }
+
+        /* 형제 선택자 ( + ) : "바로 뒤에 있는" 선택된 요소 하나만 선택하기 */
+        #my-span1 + * {
+            background-color: yellow;
+        }
+
+        /* input 속성 선택자 */
+        input:read-only {
+            color: white;
+        }
+        
+        /* 라디오 버튼이나 체크박스에 많이 활용되는 input:checked */
+        input:checked{
+            width:100px;
+            height:100px;
+        }
+
+        /* 마우스가 위로 올라 갔을 때 */
+        li:hover {
+            background-color:pink;
+        }
+
+        /* 방문하지 않은 링크(a태그)를 선택 */
+        a:link {
+            background-color: red;
+        }
+
+        /* 방문했던 링크를 선택 */
+        a:visited {
+            color:hotpink;
+        }
+        /* n 번째 요소 선택 하기 */
+        *:nth-child(2n-1){
+            font-size:12px;
+        }
+
+        #container span:first-child{
+            background-color: brown;
+        }
+
+        #container *:last-child{
+            background-color: blue;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div id="container">
+        <span>11</span>
+        <span>22</span>
+        <h1 id="my-h1">title</h1>
+        <ul id="my-ul">
+            <h1>Here is unordered list</h1>
+            <li>item 1</li>
+            <li>
+                <a href="#" id='my-a1'>item 2 - link</a>
+            </li>
+            <li>
+                <a href="https://www.naver.com" id='my-a2'>item 3 - naver</a>
+            </li>
+        </ul>
+        <span id="my-span1" title="title1">SPAN1</span>
+        <span id="my-span2" title="title2">SPAN2</span>
+        <span class="my-class" title="my-span3">SPAN3</span>
+        <h2 class="my-class">title2</h2>
+        <input id="my-input1" type="text" value="readonly text box" readonly />
+        <input id="my-input2" type="text" value="not readonly text box" />
+        <input type="checkbox" checked />
+        <input type="checkbox" />
+        <span>333</span>
+    </div>
+</body>
+</html>

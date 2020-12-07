@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+
+    <style>
+        .my-div {
+            background-color: skyblue;
+            width: 100%;
+            height: 300px;
+        }
+
+        /*
+            기본적인 미디어 쿼리 작성 방법
+            @media 조건문  {  실행문  }
+        
+        * 조건문 부분에는 스타일을 적용 시킬 부분의 기기명세 또는 속성(보통은 화면 크기)가 들어간다.
+          
+        기기명세란 미디어의 유형으로써 대표적으로
+        
+        all : 모든 기기
+        screen : 컴퓨터 또는 모바일 화면
+        print  : 인쇄장치(프린터기)
+        
+        를 제일 많이 사용하며, 기기명세를 생략하면 all이 기본적으로 적용된다.
+     
+        조건으로써 only, not을 활용 할 수 있다.
+        not은 뒤에 이어질 모든 조건을 부정하고
+        only는 뒤에 이어지는 모든 조건을 해석하게 된다.
+        
+        기본으로 only를 사용하게 된다.
+        
+        */
+
+        /* 모든 기기의 최소 너비가 1000px 이거나, 최대 너비가 300px 인 경우*/
+
+        @media (min-width:1000px),
+        (max-width:350px) {
+            .my-div {
+                background-color: beige;
+            }
+        }
+
+        /* 모든 기기의 최대 픽셀이 300px이면 */
+
+        @media (max-width:300px) {
+            .my-div {
+                width: 100%;
+                background-color: green;
+            }
+        }
+
+        /* 모든 기기의 최고 길이가 700 이고, 최소길이가 300px 이면 */
+
+        /* 즉 기기의 길이가 300px~700px 이면 */
+        @media (max-width:700px) and (min-width:300px) {
+            .my-div {
+                background-color: red;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div class="my-div">
+        hello
+    </div>
+</body>
+
+</html>

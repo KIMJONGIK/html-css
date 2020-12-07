@@ -1,0 +1,122 @@
+w3school html 배우는 곳
+
+* Block Tag : 모니터 좌측부터 우측 끝까지 차지하게 해주는 태그
+	대표적인 태그
+	- div 
+	- p 
+* Inline Tag : 컨텐츠만큼만 차지하게 해주는 태그
+	대표적인 태그
+	- span 
+	- img 
+
+vscode에서
+HTML Snippets 설치
+live server 설치
+
+처음에 ! + Tab
+meta : 무언가의 기초, 바탕 정보. 카톡에 링크 보내면 링크랑 같이 뜨는 이미지나 제목 등
+head : 설정
+body : 사용자들이 볼 수 있는 공간
+html 구조 : 머리 + 몸통
+viewport 모바일을 지원할지 말지 설정. 반응형 페이지
+device-width : 화면 가로길이를 다 쓰겠다.
+title : 탭에 표시되는 문자열. 타이틀 안쪽을 토대로 크롤링 등을 하는 경우가 있다.
+
+네이버 홈 화면 기준
+맨 위 층 : header
+아래에 있는 메일, 카페, 블로그 ... : navigation, nav
+그 아래 : contents
+맨 아래 : footer
+
+div 태그를 통해서 구조화가 되어있다.
+
+body 내부에는 크게 section으로 나뉘어 있고
+section은 보통 article로 구성되어 있다.
+
+div 안쪽에 바로 텍스트를 쓰는 것은 권장하지 않음
+텍스트는 p를 쓰자(paragraph)
+
+src : 속성 또는 설정. attribute
+태그마다 고유 attribute가 있고 공용 attribute가 있다.
+공용 attribute는 모든 태그에 있다. ex) style
+src는 img 태그의 고유 attribute. 어떤 이미지를 띄워주겠다는 뜻
+src는 속성명, = 이후는 속성 값
+alt는 시각장애인을 위해 이미지를 읽어주기 위한 도구. alt 없으면 표준화가 안 됨
+title은 갖다 대면 뜨는 글씨
+글에 효과들을 넣을 때 span을 사용
+
+
+anchor 태그 <a>
+href : 링크
+
+옛날 ver 문서구조
+html 공통속성 id : html 내에서 고유한 값을 가져야 한다.
+id : header - contents - footer 구조가 자리잡혔다.
+
+html09
+- ul : unordered list 순서 없는 리스트
+- ol : ordered list 순서 있는 리스트
+ul, ol은 모두 블록태그 : 아래쪽으로 쌓인다.
+
+html10
+- table : 표 태그
+	- tr : table row
+		- td : table data
+
+
+html11
+- thead : table head
+	- th : table header
+- tbody
+- tfoot
+
+
+pass
+
+
+html16
+- form : 클라이언트가 서버에 데이터를 전달하기 위한 태그
+		 클라이언트가 입력할 수 있는 Parameter
+	- action : 어디에?
+	- method : 어떤 방식으로? get or post
+
+우리는 서버를 프로그래밍 하고 있다.
+클라이언트 개발은 어플이라든지, 크롬이라든지 만드는 것
+요즘은 기기 성능이 좋아져서 Client Side Randering(CSR)을 섞어서 쓴다. 옛날엔 주로 SSR
+SSR / CSR
+
+C-S 구조 - 네이버
+Client											Server 
+api : 메뉴판 									 / 	  -> 메인
+												/nid -> 로그인
+												(url)
+
+-> request : 메인페이지 내놔
+Data(Parameter : id, pwd ... )
+	- get : 검색어(url에 들어가는 경우들).
+			속도가 빠르고 보안이 필요 없는 경우
+	- post : request body에 데이터를 숨겨서 보내는 방식.
+			파일 전송 등의 대용량 데이터. 느리고 보안성이 뛰어남
+
+
+
+												<- response : 응답. 
+													- 페이지(http://www.naver.com/) HTML, CSS, JS
+													- Data(attribute. Json형식)
+														- attribute 살아남는 주기는 밑으로 갈 수록 커진다.
+															- Page(response)
+															- Cookie
+															- Session 
+															- Application 
+											
+type에 form의 종류가 바뀐다.
+submit : action 연결되어 있는 부분으로 데이터를 전송
+get이라 url에 데이터가 올라간다.
+
+html19
+type = radio : name이 같은 것끼리 묶는다.
+type = checkbox
+
+DOM(Document Object Model) - 모든 TAG는 객체화 된다.
+
+

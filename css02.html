@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>후손(하위) 선택자</title>
+
+    <style>
+        /* 후손 선택자 */
+        #div1 ul {
+            border: 1px solid black;
+        }
+        /* 자식 선택자 */
+        #div1 > ul {
+            border: 2px dotted red;
+        }
+        
+        #div2 p{
+            color: green;
+        }
+        
+        #div2 h2 + p{
+            color:red;
+        }
+        
+         #div2 h2 ~ p{
+            background-color: aquamarine;
+        }
+        
+    </style>
+
+</head>
+
+<body>
+
+    <div id="div1">
+        <ul>
+            <li>내용1</li>
+            <li>내용2</li>
+            <li>내용3</li>
+            <li>
+                <ul>
+                    <li>4-1</li>
+                    <li>4-2</li>
+                    <li>4-3</li>
+                </ul>
+            </li>
+        </ul>
+
+        <p>문단1</p>
+
+    </div>
+
+    <div id="div2">
+        <h2>제목2</h2>
+        <p>문단2-1</p>
+        <p>문단2-2</p>
+    </div>
+
+</body>
+</html>

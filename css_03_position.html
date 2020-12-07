@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Bootstrap 101 Template</title>
+
+    <style>
+        .container{
+            height:1000px;
+            width:300px;
+            
+            background-color: lightgray;
+        }
+/*        모든 태그들은 최초에 position:static 값을 갖는다. 왼쪽에서 오른쪽으로, 위에서 아래로*/
+        
+/*      position:relative 속성을 부여. top, bottom, right, left 좌표값 지정이 가능해 진다.*/
+        #box1 {
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            background-color: red;
+            position:relative;
+            top:100px;
+            left:300px;
+        }
+/*        position:absolute 속성을 부여. position:relative인 부모의 위치를 기준으로 좌표값을 지정한다.
+          부모의 position값이 relative가 없다면 계속 조상 엘리먼트를 찾고, 모든 부모가 position:relative가 아니라면 body를 기준으로 한다.*/
+        #box2 {
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            background-color: green;
+            position:absolute;
+            right:100px;
+        }
+/*        position:fixed 속성을 부여. 뷰포트 기준으로 좌표값을 지정한다.*/
+        #box3 {
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            background-color: blue;
+            position: fixed;
+            top: 150px;
+            left: 150px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div id="box1">box 1 - relative </div>
+        <div id="box2">box 2 - absolute</div>
+        <div id="box3">box 3 - fixed</div>
+
+    </div>
+
+</body>
+</html>
